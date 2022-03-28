@@ -1,0 +1,333 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spectral+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url(Imgs/img_004.jpg);
+    background-size: cover;
+    background-position: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    max-width: 750px;
+    margin: auto;
+    font-size: 16px;
+    background: #ffffff28;
+}
+
+/* Блок "Аватар" и "Инфо" */
+
+.info_avatar {
+    height:min-content;
+    color: white;
+    background-image: url(Imgs/img_003.jpg);
+    background-size: cover;
+}
+
+.info_avatar img {
+    display: block;
+    width: 262px;
+    border-radius: 50%;
+    padding: 60px;
+}
+
+@media (max-width: 550px) {
+    .info_avatar img {
+        display: block;
+        width: 50%;
+        border-radius: 50%;
+        margin: auto;
+        padding: 30px;
+    }
+}
+
+.info_text h1 {
+    font-family: 'Roboto', sans-serif;
+    font-style: Italic;
+}
+
+.info_text {
+    padding: 12px 20px 20px;
+    box-sizing: border-box;
+    border-top: 3px solid #ffa500;
+    border-bottom: 3px solid #ffa500;
+    text-align: justify;
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+    background: #ffe6b6;
+}
+
+@media (max-width: 550px) {
+    .info_text {
+        padding: 12px 20px 20px;
+        box-sizing: border-box;
+        border-top: 3px solid #ffa500;
+        border-bottom: 3px solid #ffa500;
+        text-align: center;
+        font-family: 'Roboto', sans-serif;
+        font-style: italic;
+        background: #ffe6b6;
+    }
+}
+
+/* Блок "Интересы", "Место работы", "Обратная связь" */
+
+#tab_hobbi,
+#tab_work,
+#tab_connection {
+    display: none;
+}
+
+.tabs div {
+    display: none;
+}
+
+.label_hobbi,
+.label_work,
+.label_connection {
+    display: block;
+    background: #000;
+    width: 30%;
+    padding: 15px 0;
+    color: white;
+    font-family: 'Spectral SC', sans-serif;
+    text-align: center;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+@media (max-width: 550px) {
+    .label_hobbi,
+    .label_work,
+    .label_connection {
+        display: block;
+        background: #000;
+        width: 45%;
+        padding: 15px 0;
+        color: white;
+        font-family: 'Spectral SC', sans-serif;
+        font-size: 14px;
+        text-align: center;
+        cursor: pointer;
+        box-sizing: border-box;
+    }
+}
+
+.label_hobbi {
+    border-right: 8px solid #ff0000;
+}
+
+.label_work {
+    border-right: 8px solid #008000;
+}
+
+.label_connection {
+    border-right: 8px solid blueviolet;
+}
+
+.label_hobbi:hover,
+.label_work:hover,
+.label_connection:hover {
+    background: #303030;
+    transition: all .5s;
+}
+
+@media (max-width: 1000px) {
+    .label_hobbi:hover,
+    .label_work:hover,
+    .label_connection:hover {
+        background: black;
+    }
+}
+
+#tab_hobbi:checked + label {
+    width: 100%;
+    color: white;
+    letter-spacing: 1.5px;
+    transition: all .5s;
+    cursor: pointer;
+    border-top-right-radius: 10px;
+    border-right: 48px solid #ff9696; 
+}
+
+#tab_work:checked + label {
+    width: 100%;
+    color: white;
+    letter-spacing: 1.5px;
+    transition: all .5s;
+    cursor: pointer;
+    border-top-right-radius: 10px;
+    border-right: 48px solid #a6e4a6;
+}
+
+#tab_connection:checked + label {
+    width: 100%;
+    color: white;
+    letter-spacing: 1.5px;
+    transition: all .5s;
+    cursor: pointer;
+    border-top-right-radius: 10px;
+    border-right: 48px solid #b89dd1;
+}
+
+#tab_hobbi:checked ~ .hobbi,
+#tab_work:checked ~ .work,
+#tab_connection:checked ~ .connection {
+    display: block;
+}
+
+.hobbi {
+    background: #ffe7e7;
+    padding: 15px 20px;
+    border-bottom-right-radius: 10px;
+}
+
+.hobbi li {
+    list-style: none;
+    padding-bottom: 5px;
+}
+
+.work {
+    background: #e6ffe6;
+    border-bottom-right-radius: 10px;
+}
+
+.work table {
+    width: 100%;
+    padding: 15px 20px;
+}
+
+.work thead th {
+    padding-bottom: 5px;
+}
+
+.work tbody td {
+    text-align: center;
+    padding-bottom: 2px;
+}
+
+.work tbody tr:nth-child(odd) {
+    background: #e0e0e0;
+}
+
+.connection div {
+    display: block;
+}
+
+.connection {
+    background: #e4e4e4;
+    padding: 15px 20px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.connection div {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.connection label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.connection input,
+.connection textarea {
+    border: none;
+    outline: transparent;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-family: inherit;
+    width: 50%;
+    box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 550px) {
+    .connection input,
+    .connection textarea {
+        border: none;
+        outline: transparent;
+        padding: 5px 10px;
+        border-radius: 15px;
+        font-family: inherit;
+        width: 85%;
+        box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.25);
+    }
+}
+
+.connection button {
+    border: none;
+    background: #000000;
+    color: #ffffff;
+    font-family: inherit;
+    padding: 10px 25px;
+    margin-top: 10px;
+    border-radius: 20px;
+    transition: all .3s;
+}
+
+.connection button:hover {
+    padding: 10px 40px;
+}
+
+.connection button:active {
+    background: #00000085;
+}
+
+/* Блок "Контакты */
+
+.contacts {
+    width: max-content;
+    margin: 150px auto 20px;
+    background: #00000000;
+}
+
+.contacts a {
+    display: inline-block;
+    width: 55px;
+    height: 55px;
+    margin: 0 5px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    transition: all .5s;
+}
+
+.link_vk {
+    background-image: url(Imgs/logo_vk.jpeg);
+}
+
+.link_telegram {
+    background-image: url(Imgs/logo_telegram.jpeg);
+}
+
+.contacts a:hover {
+    border-radius: 15px;
+    transition: all .5s;
+}
+
+.contacts a:active {
+    opacity: .5;
+    transition: all .1s;
+}
+
+/* Блок footer */
+
+.copyright {
+    background: #000000;
+    color: #ffffff;
+    text-align: center;
+    font-size: 12px;
+    font-family: 'Josefin Slab', sans-serif;
+    padding: 5px 0 3px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
